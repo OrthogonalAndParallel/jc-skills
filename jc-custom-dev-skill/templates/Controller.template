@@ -1,0 +1,40 @@
+package ${basePackage}.${domain}.${subDomain}.${entityLower}.controller;
+
+import com.yonyou.ypd.bill.response.ResultMessage;
+import com.yonyou.ypd.mdf.adapter.controller.BaseController;
+import ${basePackage}.${domain}.${subDomain}.${entityLower}.service.${entityName}Service;
+import lombok.extern.slf4j.Slf4j;
+import org.imeta.orm.base.BizObject;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * @author ${author}
+ * @description ${description}
+ * @create:${createDate}
+ */
+@Slf4j
+@RestController
+@RequestMapping("/${entityLower}")
+public class ${entityName}Controller extends BaseController {
+
+    @Resource
+    private ${entityName}Service ${entityNameLower}Service;
+
+    @RequestMapping("/query")
+    public void query(@RequestBody BizObject params, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        try {
+            List<Map<String, Object>> result = ${entityNameLower}Service.query();
+            renderJson(response, ResultMessage.data(result));
+        } catch (Exception e) {
+            String msg = e.getMessage();
+            log.error("查询${description}失败", e);
+            renderJson(response, ResultMessage.error(msg));
+        }
+    }
+
+}

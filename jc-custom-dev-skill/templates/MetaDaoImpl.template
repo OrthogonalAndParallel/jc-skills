@@ -1,0 +1,38 @@
+package ${basePackage}.${domain}.${subDomain}.${entityLower}.metadao.impl;
+
+import ${basePackage}.${domain}.${subDomain}.${entityLower}.metadao.${entityName}MetaDao;
+import com.yonyou.ypd.bill.infrastructure.service.api.IBillQueryRepository;
+import org.imeta.orm.schema.QueryCondition;
+import org.imeta.orm.schema.QueryConditionGroup;
+import org.imeta.orm.schema.QuerySchema;
+import org.springframework.stereotype.Component;
+import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author ${author}
+ * @description ${description}
+ * @create:${createDate}
+ */
+@Component("${entityName}MetaDao")
+public class ${entityName}MetaDaoImpl implements ${entityName}MetaDao {
+
+    private static final String domain = "${domainCode}";
+
+    private static final String metaFullName = "${metaFullName}";
+
+    @Resource
+    private IBillQueryRepository iBillQueryRepository;
+
+    @Override
+    public List<Map<String, Object>> select() throws Exception {
+        QuerySchema qs = QuerySchema.create().addSelect("id");
+        QueryConditionGroup qcg = new QueryConditionGroup();
+        // TODO: 添加查询条件
+        qs.appendQueryCondition(qcg);
+        List<Map<String, Object>> result = iBillQueryRepository.queryMapBySchema(metaFullName, qs, domain);
+        return result;
+    }
+
+}
