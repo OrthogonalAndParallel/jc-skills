@@ -1,0 +1,26 @@
+package ${basePackage}.${domain}.${subDomain}.${entityLower}.service.impl;
+
+import ${basePackage}.${domain}.${subDomain}.${entityLower}.metadao.${entityName}MetaDao;
+import ${basePackage}.${domain}.${subDomain}.${entityLower}.service.${entityName}Service;
+import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author ${author}
+ * @description ${description}
+ * @create:${createDate}
+ */
+@Service
+public class ${entityName}ServiceImpl implements ${entityName}Service {
+
+    @Resource
+    private ${entityName}MetaDao ${entityNameLower}MetaDao;
+
+    @Override
+    public List<Map<String, Object>> query() throws Exception {
+        return ${entityNameLower}MetaDao.select();
+    }
+
+}

@@ -80,6 +80,7 @@ rm ~/.config/skillshare/skills/_jc-techblog
 | :------- | :--- | :--- |
 | jc-techblog | 技术博客写作助手 | `jc-techblog/` |
 | jc-yonyou-test-case | 用友项目测试用例生成器 | `jc-yonyou-test-case/` |
+| jc-custom-dev-skill | Java 骨架代码生成器 | `jc-custom-dev-skill/` |
 
 ## 常见问题
 
@@ -112,6 +113,10 @@ jc-skills/
 │   └── SKILL.md
 ├── jc-yonyou-test-case/   # 用友测试用例生成技能
 │   └── SKILL.md
+├── jc-custom-dev-skill/   # Java 骨架代码生成技能
+│   ├── SKILL.md
+│   ├── templates/         # 代码模板
+│   └── references/        # 规范文档
 └── README.md
 ```
 

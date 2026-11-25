@@ -1,0 +1,21 @@
+package ${basePackage}.${domain}.${subDomain}.${entityLower}.metadao;
+
+import java.util.List;
+import java.util.Map;
+// 根据需要添加其他导入
+
+/**
+ * @author ${author}
+ * @description ${description}
+ * @create:${createDate}
+ */
+public interface ${entityName}MetaDao {
+
+    /**
+     * 查询${description}
+     * @return
+     * @throws Exception
+     */
+    List<Map<String, Object>> select() throws Exception;
+
+}
