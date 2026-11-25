@@ -20,7 +20,11 @@
 ### 安装 skillshare
 
 ```bash
+# Mac
 curl -fsSL https://raw.githubusercontent.com/runkids/skillshare/main/install.sh | sh
+
+# Win
+irm https://raw.githubusercontent.com/runkids/skillshare/main/install.ps1 | iex
 ```
 
 ### 初始化配置
@@ -32,18 +36,28 @@ skillshare init
 ### 创建技能链接
 
 ```bash
-# 创建技能链接并启用（首次使用需要 --enable 参数）
+# Mac 创建技能链接并启用（首次使用需要 --enable 参数）
 skillshare link ~/Documents/github/jc-skills/jc-techblog --enable
+
+# Win 创建技能链接并启用（首次使用需要 --enable 参数）
+skillshare link D:\github\jc-skills\jc-techblog --enable
 ```
 
 ### 验证同步结果
 
 ```bash
-# 查看技能目录
+# Mac 查看技能目录
 ls -la ~/.config/skillshare/skills/
 
-# 确认已同步到 Claude Code
+# Win 查看技能目录
+Get-ChildItem -Force "$env:AppData\skillshare\skills"
+
+
+# Mac 确认已同步到 Claude Code
 ls ~/.claude/skills/
+
+# Win 确认已同步到 Claude Code
+Get-ChildItem -Force "C:\Users\jc117\.claude\skills"
 ```
 
 ### 日常同步
